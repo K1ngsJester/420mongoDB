@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>starter code</title>
+<link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+
+<body>
+<h2>V2 To Do's</h2>
+<div class="grid-container">
+   
+
+
+<div  class="grid-item">
+    <h3>Existing To Dos</h3>
+    <button type="button" id=get>Show Existing</button>
+    <ul id="listUl"></ul>
+</div>
+   
+   
+   
+   
+    <div  class="grid-item">
+        <h3>Add a new ToDo</h3>
+        <label for="day">Title:</label>
+        <input type="text" id="day" name="fname"><br><br>
+        <label for="food">Detail:</label>
+        <input type="text" id="food" name="fname"><br><br>
+        <label for="calories">Priority:</label>
+        <input type="text" id="calories" name="fname"><br><br>
+        <button type="button" id=submit>SUBMIT</button>
+       
+    </div>
+
+   
+
+    <div  class="grid-item">
+        <h3>Delete ToDo by Title</h3>
+        <div>
+            Enter Title here:  <input type="text" id="deleteDay"><br><br>
+            <button type="button" id=delete>DELETE</button><br>
+        </div>
+    </div>
+
+   
+    <div  class="grid-item">
+        <h3>Edit one ToDo </h3>
+        <div>
+            Enter Title here:  <input type="text" id="modDay"><br><br>
+            <button type="button" id=find>FIND</button><br>
+        </div>
+        <div>
+            <h3>Edit these fields</h3>
+        <input type="text" id="mday" ><br><br>
+        <input type="text" id="mfood" ><br><br>
+        <input type="text" id="mcalories" ><br><br>
+        <input type="text" id="mhomemade" ><br><br>
+        <button type="button" id=msubmit>SUBMIT</button>
+        </div>
+   
+    </div>
+</div>
+
+<script src="/javascripts/index.js"></script>
+</body>
+
+</html>
