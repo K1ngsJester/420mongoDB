@@ -1,9 +1,9 @@
 
-function CaloriesCalculator(pDay, pFood, pCalories) {
+function CaloriesCalculator(pDay, pFood, pCalories, pHomemade) {
     this.day= pDay;
     this.food = pFood;
     this.calories = pCalories;
-    this.homemade = false;
+    this.homemade = pHomemade;
   }
   var ClientNotes = [];  // our local copy of the cloud data
 
@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var tDay = document.getElementById("day").value;
         var tFood = document.getElementById("food").value;
         var tCalories = document.getElementById("calories").value;
-        var oneCaloriesCalculator = new CaloriesCalculator(tDay, tFood, tCalories);
+        var tHomemade = document.getElementById("homemade");
+        var oneCaloriesCalculator = new CaloriesCalculator(tDay, tFood, tCalories, tHomemade.checked);
 
         $.ajax({
             url: '/NewDay' ,
@@ -23,14 +24,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             contentType: 'application/json',
             data: JSON.stringify(oneCaloriesCalculator),
             success: function (result) {
-                console.log("added new note")
+                console.log("added new entry")
             }
 
         });
-    });
+        updateList();
 
-    document.getElementById("get").addEventListener("click", function () {
-        updateList()
     });
   
 
@@ -62,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         else {
             console.log("no matching Subject");
         } 
+        updateList();
     });
 
 
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }  
                 });  
             
-       
+        updateList();
     });
 
 
@@ -122,7 +122,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 function updateList() {
 var ul = document.getElementById('listUl');
-ul.innerHTML = "";  // clears existing list so we don't duplicate old ones
+    ul.innerHTML = "";  // clears existing list so we don't duplicate old ones
+    var totalC = document.getElementById("totalCal");
+    totalC.innerHTML = "";
+    var total = 0;
 
 //var ul = document.createElement('ul')
 
@@ -138,8 +141,10 @@ $.get("/CaloriesCalculators", function(data, status){  // AJAX get
         var li = document.createElement('li');
         ul.appendChild(li);
 
-        li.innerHTML=li.innerHTML + index + ": " + " Day: " + item.day + "  " + item.food + ":  " + item.calories + " Homemade? "+ item.homemade;
+        li.innerHTML = li.innerHTML + "Day: " + item.day + "<br/> Foods: " + item.food + "<br/> Calories:  " + item.calories + "<br/> Homemade? " + item.homemade + "<br/><br/>";
+        total += item.calories;
     }
+    totalC.innerHTML = "Total Calories: " + total;
 });
 }
 
