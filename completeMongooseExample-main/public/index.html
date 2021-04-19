@@ -10,47 +10,49 @@
 </head>
 
 <body>
-<h2>V2 To Do's</h2>
+<h2>Calories Counter</h2>
 <div class="grid-container">
    
 
 
-<div  class="grid-item">
-    <h3>Existing To Dos</h3>
-    <button type="button" id=get>Show Existing</button>
+<div  class="grid-item1">
+    <h3>Calories Log</h3>
     <ul id="listUl"></ul>
+    <p id="totalCal"></p>
 </div>
    
    
    
    
-    <div  class="grid-item">
-        <h3>Add a new ToDo</h3>
-        <label for="day">Title:</label>
-        <input type="text" id="day" name="fname"><br><br>
-        <label for="food">Detail:</label>
-        <input type="text" id="food" name="fname"><br><br>
-        <label for="calories">Priority:</label>
-        <input type="text" id="calories" name="fname"><br><br>
-        <button type="button" id=submit>SUBMIT</button>
-       
-    </div>
+<div class="grid-item">
+    <h3>What did you eat?</h3>
+    <label for="day">Day of the Week:</label>
+    <input type="text" id="day" name="fname"><br><br>
+    <label for="food">List Food:</label>
+    <input type="text" id="food" name="fname"><br><br>
+    <label for="calories">Calories:</label>
+    <input type="text" id="calories" name="fname"><br><br>
+    <label for="homemade">Homemade:</label>
+    <input type="checkbox" id="homemade" ><br><br>
+    <button type="button" id=submit>SUBMIT</button>
+
+</div>
 
    
 
     <div  class="grid-item">
-        <h3>Delete ToDo by Title</h3>
+        <h3>Delete Entry</h3>
         <div>
-            Enter Title here:  <input type="text" id="deleteDay"><br><br>
+            Enter Day:  <input type="text" id="deleteDay"><br><br>
             <button type="button" id=delete>DELETE</button><br>
         </div>
     </div>
 
    
     <div  class="grid-item">
-        <h3>Edit one ToDo </h3>
+        <h3>Edit Entry </h3>
         <div>
-            Enter Title here:  <input type="text" id="modDay"><br><br>
+            Enter Day:  <input type="text" id="modDay"><br><br>
             <button type="button" id=find>FIND</button><br>
         </div>
         <div>
