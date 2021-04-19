@@ -9,8 +9,8 @@ const CaloriesCalculators = require("../CaloriesCalculators");
 
 // edited to include my non-admin, user level account and PW on mongo atlas
 // and also to include the name of the mongo DB that the collection
-const dbURI =
-"mongodb+srv://testUser:0530@mycluster.nee1p.mongodb.net/ToDo?retryWrites=true&w=majority";
+//const dbURI = "mongodb+srv://testUser:0530@mycluster.nee1p.mongodb.net/ToDo?retryWrites=true&w=majority";
+const dbURI = "mongodb+srv://ServerUser:12qw1q2w@jestercluster.bkyxx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 // Make Mongoose use `findOneAndUpdate()`. Note that this option is `true`
 // by default, you need to set it to false.
